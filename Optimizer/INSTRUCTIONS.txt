@@ -1,0 +1,43 @@
+﻿INSTRUCTIONS
+
+~~~SUMMARY~~~
+This is an uber-like service that schedules ride sharing trips on a vehicle.
+Please complete as much as possible within 2 hours. Try not to go past that time frame.
+This project is a console application used to schedule trips to vehicles.
+vehicles are defined as the time frame that a vehicle can accept trips or breaks.
+Currently there are no restrictions on how many trips can be scheduled to a vehicle nor stopping overlapping trips.
+The only restriction currently is one that doesn't allow a trip to be scheduled outside of vehicle times - these are referred to
+as Illegal trips.
+
+~~~PART ONE INSTRUCTIONS~~~
+
+1) Optimize how we show the Summary in the console window and cleanup any code
+2) Limit the trips that will be scheduled to the vehicles so that no trip times are overlapping on the same vehicle.
+NOTE : there should only be one trip on a vehicle at any given time. You will need to use the trips times to look at this.
+3) Any trips that cannot be scheduled yet ARE within vehicle times, introduce a new boolean field called waitlist, and mark them as waitlist - NOT ILLEGAL.
+4) In the summary, display the following:
+  a. Summary Text
+  b. Scheduled Trips
+  c. Waitlisted Trips
+  d. Illegal Trips
+  e. How many trips are scheduled to each vehicle
+
+~~~PART TWO INSTRUCTIONS~~~
+
+REQUIREMENTS:
+Any vehicle that have 20 minutes or more in between trips that are assigned to it now needs a "ScheduledBreak" added to it.
+vehicles may have multiple scheduled breaks due to this requirement.
+This scheduled break will be exactly half of the time (rounded down to the nearest minute) that is in between the two trips it is scheduled between.
+The start of the break will happen 5 minutes after the previous trips end time.
+
+1) Create a scheduled break object.
+2) Schedule the scheduled break using the requirements above.
+3) Add how many schedule breaks were created to the summary screen for each vehicle.
+
+~~~PART THREE INSTRUCTIONS~~~
+
+1. In TestData.cs in the get property for the "Trips" field, there is a line commented out currently "return GetTripsFromJSON();"
+   Uncomment this line out, and comment out the line that states "return MockTrips();". Currently in MockTrips function returns a random
+   set of data of
+2. Using this data and still adhearing to the rules that we set up in Part One and Part Two of this document, 
+   write additional logic to schedule as many trips as possible and eliminate as many breaks as possible.
